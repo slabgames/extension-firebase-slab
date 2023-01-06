@@ -19,8 +19,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.ads.*;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.installations.FirebaseInstallations;
+// import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -155,28 +155,28 @@ public class Firebase extends Extension {
     * The app is restored on a new device
     * The user uninstalls/reinstall the app
     * The user clears app data.*/
-    public static String getInstanceIDToken()
-    {
-        final String token = FirebaseInstanceId.getInstance().getToken();
-        Log.d(TAG, "getInstanceId success: " + token);
+    // public static String getInstanceIDToken()
+    // {
+    //     final String token = FirebaseInstallations.getInstance().getId();
+    //     Log.d(TAG, "getInstanceId success: " + token);
 
-        return token;
+    //     return token;
 
-        /*
-        FirebaseInstanceId.getInstance().getInstanceId()
-        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-            @Override
-            public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                if (!task.isSuccessful()) {
-                    Log.d(TAG, "getInstanceId failed", task.getException());
-                    return;
-                }
+        
+    //     // FirebaseInstanceId.getInstance().getInstanceId()
+    //     // .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+    //     //     @Override
+    //     //     public void onComplete(@NonNull Task<InstanceIdResult> task) {
+    //     //         if (!task.isSuccessful()) {
+    //     //             Log.d(TAG, "getInstanceId failed", task.getException());
+    //     //             return;
+    //     //         }
 
-                Log.d(TAG, "getInstanceId success", task.getResult().getToken());
-            }
-        });
-        */
-    }
+    //     //         Log.d(TAG, "getInstanceId success", task.getResult().getToken());
+    //     //     }
+    //     // });
+        
+    // }
 
 
     public static void sendFirebaseAnalyticsEvent(String eventName, String jsonPayload) {
@@ -303,7 +303,7 @@ public class Firebase extends Extension {
         // });
 
 
-        Firebase.getInstanceIDToken();
+        // Firebase.getInstanceIDToken();
 		
 		/*
 		mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();

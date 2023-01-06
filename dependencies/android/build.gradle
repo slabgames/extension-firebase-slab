@@ -6,10 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        // classpath 'com.google.gms:google-services:4.3.14'
-        // classpath 'com.google.gms:google-services:4.3.3'
         
-
     }
 }
 
@@ -62,12 +59,13 @@ dependencies {
     // implementation "androidx.work:work-runtime:2.2.0"
     // implementation "androidx.annotation:annotation:1.1.0"
 	// implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
-    implementation platform('com.google.firebase:firebase-bom:28.1.0')
-	implementation 'com.google.android.gms:play-services-ads:20.2.0'
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    // implementation platform('com.google.firebase:firebase-bom:28.1.0')
+	implementation 'com.google.android.gms:play-services-ads:21.4.0'
     // implementation 'com.google.firebase:firebase-inappmessaging:20.0.0'
     // implementation 'com.google.firebase:firebase-inappmessaging-display:20.0.0'
     // implementation 'com.google.firebase:firebase-messaging:22.0.0'
-    implementation 'com.google.firebase:firebase-iid'
+    implementation 'com.google.firebase:firebase-installations'
     // implementation 'com.google.firebase:firebase-messaging:17.3.4'
     // implementation 'com.google.firebase:firebase-core:16.0.4'
     // implementation 'com.google.firebase:firebase-config:21.0.0'
