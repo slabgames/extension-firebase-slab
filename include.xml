@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<section if="ios">
+		<ndll name="firebase" />
+		<dependency path="dependencies/ios/Analytics/FirebaseAnalytics.framework" />
+        	<dependency path="dependencies/ios/Analytics/FirebaseCore.framework" />
+		<dependency path="dependencies/ios/Analytics/FirebaseCoreDiagnostics.framework" />
+		<dependency path="dependencies/ios/Analytics/FirebaseInstanceID.framework" />
+		<dependency path="dependencies/ios/Analytics/GoogleAppMeasurement.framework" />
+		<dependency path="dependencies/ios/Analytics/GoogleUtilities.framework" />
+		<dependency path="dependencies/ios/Analytics/MeasurementNanoPB.framework" />
+		<dependency path="dependencies/ios/Analytics/nanopb.framework" />
+		<dependency path="dependencies/ios/Messaging/FirebaseMessaging.framework" />
+        	<dependency path="dependencies/ios/Messaging/Protobuf.framework" />
+		<!--<dependency path="dependencies/ios/RemoteConfig/FirebaseRemoteConfig.framework"/>-->
+        	<!--<dependency name="UserNotifications.framework" />-->
+        	<ios linker-flags="-ObjC" />
+	</section>
+	
+	<dependency name="firebase" path="dependencies/android" if="android" />
+	<android extension="extension.java.Firebase" />
+	
+</project>

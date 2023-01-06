@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<section if="ios">
+		<ndll name="firebase" />
+		<dependency path="dependencies/ios/Crashlytics.framework" />
+		<dependency path="dependencies/ios/Fabric.framework" />
+        
+		<dependency path="dependencies/ios/Analytics/FIRAnalyticsConnector.framework" />
+        <dependency path="dependencies/ios/Analytics/FirebaseAnalytics.framework" />
+        <dependency path="dependencies/ios/Analytics/GoogleAppMeasurement.framework" />
+        <dependency path="dependencies/ios/Analytics/FirebaseCore.xcframework/ios-i386_x86_64-simulator/FirebaseCore.framework" />
+        <dependency path="dependencies/ios/Analytics/FirebaseCoreDiagnostics.xcframework/ios-i386_x86_64-simulator/FirebaseCoreDiagnostics.framework" />
+        <dependency path="dependencies/ios/Analytics/FirebaseInstallations.xcframework/ios-i386_x86_64-simulator/FirebaseInstallations.framework" />
+        <dependency path="dependencies/ios/Analytics/GoogleDataTransport.xcframework/ios-i386_x86_64-simulator/GoogleDataTransport.framework" />
+        <dependency path="dependencies/ios/Analytics/GoogleUtilities.xcframework/ios-i386_x86_64-simulator/GoogleUtilities.framework" />
+        <dependency path="dependencies/ios/Analytics/nanopb.xcframework/ios-i386_x86_64-simulator/nanopb.framework" />
+        <dependency path="dependencies/ios/Analytics/PromisesObjC.xcframework/ios-i386_x86_64-simulator/PromisesObjC.framework" />
+		
+        <dependency path="dependencies/ios/Messaging/FirebaseInstanceID.xcframework/ios-i386_x86_64-simulator/FirebaseInstanceID.framework" />
+        <dependency path="dependencies/ios/Messaging/FirebaseMessaging.xcframework/ios-i386_x86_64-simulator/FirebaseMessaging.framework" />
+        <dependency path="dependencies/ios/Messaging/Protobuf.xcframework/ios-i386_x86_64-simulator/Protobuf.framework" />
+		
+        <dependency path="dependencies/ios/RemoteConfig/FirebaseABTesting.xcframework/ios-i386_x86_64-simulator/FirebaseABTesting.framework"/>
+        <dependency path="dependencies/ios/RemoteConfig/FirebaseRemoteConfig.xcframework/ios-i386_x86_64-simulator/FirebaseRemoteConfig.framework"/>
+
+        <ios linker-flags="-ObjC" />
+	</section>
+	
+	<dependency name="firebase" path="dependencies/android" if="android" />
+	<android extension="org.haxe.extension.Firebase" />
+	
+</project>

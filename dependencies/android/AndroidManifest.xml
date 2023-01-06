@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="extension.java" >
+	<!--<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="29" />-->
+	<application>
+		
+		
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5234776717751564~2044244503"/>
+		
+	</application>
+	
+</manifest>

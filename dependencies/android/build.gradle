@@ -1,0 +1,89 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+		google()
+        jcenter()
+    }
+    dependencies {
+        // classpath 'com.google.gms:google-services:4.3.14'
+        // classpath 'com.google.gms:google-services:4.3.3'
+        
+
+    }
+}
+
+android {
+    compileOptions {
+                   sourceCompatibility 1.8
+                   targetCompatibility 1.8
+               }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+}
+
+allprojects {
+  // ...
+
+  repositories {
+    // Check that you have the following line (if not, add it):
+    google()  // Google's Maven repository
+    // ...
+  }
+}
+
+
+dependencies {
+
+	repositories {
+        google()
+    }
+
+    // FOR NME :
+    // api project(':extension-api')
+
+    // For OpenFL:
+    compile project(':deps:extension-api')
+
+
+    
+
+    // implementation 'androidx.multidex:multidex:2.0.1'
+	//implementation 'com.google.code.gson:gson:2.8.0'
+	//implementation 'com.google.firebase:firebase-core:17.0.0'
+    // implementation "androidx.work:work-runtime:2.2.0"
+    // implementation "androidx.annotation:annotation:1.1.0"
+	// implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+	implementation 'com.google.android.gms:play-services-ads:20.2.0'
+    // implementation 'com.google.firebase:firebase-inappmessaging:20.0.0'
+    // implementation 'com.google.firebase:firebase-inappmessaging-display:20.0.0'
+    // implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    implementation 'com.google.firebase:firebase-iid'
+    // implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    // implementation 'com.google.firebase:firebase-core:16.0.4'
+    // implementation 'com.google.firebase:firebase-config:21.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+	//implementation 'com.google.firebase:firebase-config:18.0.0'
+	//implementation 'com.google.firebase:firebase-iid:19.0.1'
+    // implementation 'com.google.firebase:firebase-messaging:20.0.1'
+    // implementation 'com.android.support:support-annotations:28.0.0'
+	// implementation 'com.google.firebase:firebase-core:17.0.0'
+	//implementation 'com.google.firebase:firebase-crash:16.2.1'
+	//implementation 'com.google.firebase:firebase-analytics:17.0.0'
+            
+	implementation 'com.google.code.gson:gson:2.8.7'
+    implementation "androidx.work:work-runtime:2.5.0"
+
+}
+
+// apply plugin: 'com.google.gms.google-services'

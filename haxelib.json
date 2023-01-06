@@ -1,0 +1,13 @@
+{
+  "name": "extension_firebase",
+  "url": "https://github.com/charmdev/extension-firebase",
+  "license": "MIT",
+  "tags": [],
+  "description": "",
+  "version": "1.0.0",
+  "releasenote": "",
+  "contributors": [""],
+  "dependencies": {
+
+  }
+}
