@@ -15,25 +15,23 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.ads.*;
+// import com.google.android.gms.tasks.OnCompleteListener;
+// import com.google.android.gms.tasks.Task;
+// import com.google.android.gms.ads.*;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.installations.FirebaseInstallations;
 // import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.android.gms.ads.rewarded.RewardedAd;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-// import com.google.android.gms.ads.rewarded.RewardedAdCallback;
-import com.google.android.gms.ads.OnUserEarnedRewardListener;
-import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
-// import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-import com.google.android.gms.ads.rewarded.RewardItem;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.initialization.InitializationStatus;
+// import com.google.android.gms.ads.rewarded.RewardedAd;
+// import com.google.android.gms.ads.interstitial.InterstitialAd;
+// import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+// import com.google.android.gms.ads.OnUserEarnedRewardListener;
+// import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+// import com.google.android.gms.ads.rewarded.RewardItem;
+// import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+// import com.google.android.gms.ads.initialization.InitializationStatus;
 
 // import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 // import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
@@ -79,33 +77,33 @@ public class Firebase extends Extension {
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public InterstitialAd interstitial=null;
-    public AdView banner = null;
-    public RewardedAd rewardedAd = null;
-    public RelativeLayout rl = null;
-    public AdRequest adReq = null;
+    // public InterstitialAd interstitial=null;
+    // public AdView banner = null;
+    // public RewardedAd rewardedAd = null;
+    // public RelativeLayout rl = null;
+    // public AdRequest adReq = null;
     private static FirebaseAnalytics mFirebaseAnalytics;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private static Boolean failInterstitial=false;
-    private static Boolean loadingInterstitial=false;
-    private static Boolean isRewardedAvailable=false;
-    private static String interstitialId=null;
+    // private static Boolean failInterstitial=false;
+    // private static Boolean loadingInterstitial=false;
+    // private static Boolean isRewardedAvailable=false;
+    // private static String interstitialId=null;
 
-    private static Boolean failBanner=false;
-    private static Boolean loadingBanner=false;
-    private static Boolean mustBeShowingBanner=false;
-    private static String bannerId=null;
-    private static String rewardedId=null;
+    // private static Boolean failBanner=false;
+    // private static Boolean loadingBanner=false;
+    // private static Boolean mustBeShowingBanner=false;
+    // private static String bannerId=null;
+    // private static String rewardedId=null;
 
-    private static Firebase instance=null;
-    private static Boolean testingAds=false;
-    private static Boolean tagForChildDirectedTreatment=false;
-    private static int gravity=Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
+    // private static Firebase instance=null;
+    // private static Boolean testingAds=false;
+    // private static Boolean tagForChildDirectedTreatment=false;
+    // private static int gravity=Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
 
-    private static HaxeObject callback=null;
+    // private static HaxeObject callback=null;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -120,13 +118,13 @@ public class Firebase extends Extension {
 
     static final String TAG = "FIREBASE-EXTENSION";
 
-    public static Firebase getInstance(){
-        if(instance==null && bannerId!=null) instance = new Firebase();
-        if(bannerId==null){
-            Log.e("Firebase","You tried to get Instance without calling INIT first on Firebase class!");
-        }
-        return instance;
-    }
+    // public static Firebase getInstance(){
+    //     if(instance==null && bannerId!=null) instance = new Firebase();
+    //     if(bannerId==null){
+    //         Log.e("Firebase","You tried to get Instance without calling INIT first on Firebase class!");
+    //     }
+    //     return instance;
+    // }
 
     // private static FirebaseRemoteConfig mFirebaseRemoteConfig;
 
@@ -232,8 +230,8 @@ public class Firebase extends Extension {
         Log.d(TAG, "Firebase extension onCreate ");
 
         
-        Extension.mainActivity.runOnUiThread(new Runnable() {
-            public void run() { 
+        // Extension.mainActivity.runOnUiThread(new Runnable() {
+        //     public void run() { 
 
 
                 try {
@@ -262,32 +260,32 @@ public class Firebase extends Extension {
                 
                 
                 
-             }
-        }); 
+             // }
+        // }); 
         
         
 
         // Handle possible data accompanying notification message.
-        Intent intent = null;
-		try {
-			PackageManager pm = mainContext.getPackageManager();
-			if(pm != null) {
-				String packageName = mainContext.getPackageName();
-				intent = pm.getLaunchIntentForPackage(packageName);
-				intent.addCategory(Intent.CATEGORY_LAUNCHER); // Should already be set, but just in case
-			}
-		} catch (Exception e) {
-			Log.d(TAG, "Failed to get application launch intent");
-		}
+  //       Intent intent = null;
+		// try {
+		// 	PackageManager pm = mainContext.getPackageManager();
+		// 	if(pm != null) {
+		// 		String packageName = mainContext.getPackageName();
+		// 		intent = pm.getLaunchIntentForPackage(packageName);
+		// 		intent.addCategory(Intent.CATEGORY_LAUNCHER); // Should already be set, but just in case
+		// 	}
+		// } catch (Exception e) {
+		// 	Log.d(TAG, "Failed to get application launch intent");
+		// }
         
-        Bundle intentBundle = null;
-        if (intent != null && intent.getExtras() != null) {
-            intentBundle = intent.getExtras();
-            for (String key : intentBundle.keySet()) {
-                Object value = intentBundle.get(key);
-                Log.d(TAG, "Launch intent Key: " + key + " Value: " + value);
-            }
-        }
+  //       Bundle intentBundle = null;
+  //       if (intent != null && intent.getExtras() != null) {
+  //           intentBundle = intent.getExtras();
+  //           for (String key : intentBundle.keySet()) {
+  //               Object value = intentBundle.get(key);
+  //               Log.d(TAG, "Launch intent Key: " + key + " Value: " + value);
+  //           }
+  //       }
 
         // subscribe for new messages
         // FirebaseMessaging.getInstance().subscribeToTopic("news")
@@ -322,15 +320,15 @@ public class Firebase extends Extension {
      */
     public void onDestroy () {
 
-        rewardedAd = null;
-        interstitial=null;
+        // rewardedAd = null;
+        // interstitial=null;
 
-        if (banner != null)
-            banner.destroy();
-        adReq = null;
-        rl = null;
-        instance = null;
-        banner = null;
+        // if (banner != null)
+        //     banner.destroy();
+        // adReq = null;
+        // rl = null;
+        // instance = null;
+        // banner = null;
         
         super.onDestroy();
     }
@@ -341,10 +339,11 @@ public class Firebase extends Extension {
      * the background, but has not (yet) been killed.
      */
     public void onPause () {
-
-        if ( banner != null)
-            banner.pause();
         super.onPause();
+
+        // if ( banner != null)
+        //     banner.pause();
+        // super.onPause();
     }
 
 
@@ -368,8 +367,8 @@ public class Firebase extends Extension {
         super.onResume();
 
          // Resume the AdView.
-        if ( banner != null)
-            banner.resume();
+        // if ( banner != null)
+        //     banner.resume();
 
     }
 
@@ -396,7 +395,7 @@ public class Firebase extends Extension {
 
     }
 
-    private void initInterstitial() {
+   /* private void initInterstitial() {
         reloadInterstitial();
 
         Log.d(TAG, "Firebase.java: init Interstitial admob ");
@@ -468,8 +467,8 @@ public class Firebase extends Extension {
 
 
         
-    }
-
+    }*/
+/*
     private static void reportInterstitialEvent(final String event){
         if(callback == null) return;
         mainActivity.runOnUiThread(new Runnable() {
@@ -730,7 +729,7 @@ public class Firebase extends Extension {
 		        }
 	    	}
 	    });
-    }
+    }*/
 
 
 
