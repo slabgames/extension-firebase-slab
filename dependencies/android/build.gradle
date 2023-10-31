@@ -57,20 +57,19 @@ dependencies {
 
 
     
-    implementation platform('com.google.firebase:firebase-bom:31.1.1')
-	// implementation 'com.google.android.gms:play-services-ads:21.4.0'
+    implementation platform('com.google.firebase:firebase-bom:32.5.0')
  
     implementation 'com.google.firebase:firebase-installations'
 
-    implementation 'com.google.firebase:firebase-crashlytics'
-    implementation 'com.google.firebase:firebase-analytics'
+    implementation("com.google.firebase:firebase-crashlytics-ndk")
+    implementation("com.google.firebase:firebase-analytics")
 
             
-	implementation 'com.google.code.gson:gson:2.10.1'
-    implementation "androidx.work:work-runtime:2.7.1"
+	implementation ("com.google.code.gson:gson:2.10.1")
+    implementation ("androidx.work:work-runtime:2.7.1")
     implementation("androidx.multidex:multidex:2.0.1")
 
 
 }
 
-// apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
